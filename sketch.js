@@ -2,8 +2,9 @@ var player;
 var inimigos = [];
 
 let musica;
-let player_imagem,inimigo_imagem,icone_musica;
-let fundo_imagem;
+let player_imagem, inimigo_imagem, icone_musica, fundo_imagem;
+
+let touchended = false, touchstarted = false;
 
 let MENU = 0;
 
@@ -38,12 +39,27 @@ function mouseClicked() {
         if (mouseX < 200 && mouseX > 50) {
             if (mouseY < 105 && mouseY > 50) {
                 MENU = 1
+                if (touchstarted) {
+                    if (mouseY < 105 && mouseY > 50) {
+                        MENU = 1
+                    }
+                }
             }
             if (mouseY < 200 && mouseY > 150) {
                 MENU = 2
+                if (touchstarted) {
+                    if (mouseY < 200 && mouseY > 150) {
+                        MENU = 2
+                    }
+                }
             }
             if (mouseY < 300 && mouseY > 250) {
                 MENU = 3
+                if (touchstarted) {
+                    if (mouseY < 300 && mouseY > 250) {
+                        MENU = 3
+                    }
+                }
             }
         }
     }
@@ -102,6 +118,9 @@ function draw() {
         if (frameCount % 80 == 0) {
             inimigos.push(new Inimigo());
         }
+        if (keyCode == 27) {
+            MENU = 0;
+        }
     }
     // INSTRUCOES
     if (MENU == 2) {
@@ -130,6 +149,7 @@ function draw() {
             MENU = 0;
         }
     }
+
     if (musica.isPlaying()) {
         image(icone_musica, 350, 10, 50, 50);
     } else {
