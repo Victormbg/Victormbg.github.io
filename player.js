@@ -8,12 +8,14 @@ function Player() {
     this.jump_height = 16;
     this.score = 0;
 
+    this.touchended = false;
+    this.touchstarted = false;
+
+
 
     this.show = function () {
         fill(255);
         rect(this.x, this.y, this.size, this.size);
-
-
 
         textSize(18);
         text("PONTUACAO: " + this.score, 20, 30);
@@ -45,6 +47,12 @@ function Player() {
             this.jump();
             console.log("PULANDO")
         }
+        else {
+            if (this.touchstarted && player.onBottom()) {
+                this.jump();
+                console.log("PULANDO")
+            }
+        }
     }
     this.jump = function () {
         this.velocity -= this.jump_height;
@@ -58,4 +66,6 @@ function Player() {
             return false;
         }
     }
+
+
 }
