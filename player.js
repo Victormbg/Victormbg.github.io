@@ -1,11 +1,11 @@
 function Player() {
-    this.size = 30;
+    this.size = 80;
     this.y = height - this.size;
     this.x = 50;
 
     this.gravity = 0.98;
     this.velocity = 0;
-    this.jump_height = 16;
+    this.jump_height = 18;
     this.score = 0;
 
     this.touchended = false;
@@ -13,12 +13,14 @@ function Player() {
 
 
 
-    this.show = function () {
-        fill(255);
-        rect(this.x, this.y, this.size, this.size);
+    this.show = function (img) {
+        //fill(255);
+        image(img, this.x, this.y, this.size, this.size);
+        noFill();
+        //rect(this.x, this.y, this.size, this.size);
 
-        textSize(18);
-        text("PONTUACAO: " + this.score, 20, 30);
+        textSize(19);
+        text("PONTUACAO: " + this.score, 30, 30);
     }
 
     this.update = function () {
@@ -66,6 +68,4 @@ function Player() {
             return false;
         }
     }
-
-
 }
