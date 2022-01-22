@@ -1,4 +1,4 @@
-function Player() {
+export function Player() {
     this.size = 80;
     this.y = height - this.size;
     this.x = 50;
@@ -10,8 +10,6 @@ function Player() {
 
     this.touchended = false;
     this.touchstarted = false;
-
-
 
     this.show = function (img) {
         //fill(255);

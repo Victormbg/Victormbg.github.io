@@ -1,3 +1,5 @@
+import { Player } from './ANTIGO/player.js';
+    
 var player;
 var inimigos = [];
 
