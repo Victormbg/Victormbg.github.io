@@ -1,5 +1,3 @@
-import { Player } from './ANTIGO/player.js';
-    
 var player;
 var inimigos = [];
 
@@ -15,7 +13,7 @@ function preload() {
     fundo_imagem = loadImage('assets/ceu.jpg');
     icone_musica = loadImage('assets/som.png');
     inimigo_imagem = loadImage('assets/inimigo.png');
-    player_imagem = loadImage('assets/player.png');
+    player_imagem = loadImage('assets/playerNovo.png');
 }
 
 function setup() {
@@ -88,12 +86,13 @@ function draw() {
     rect(50, 150, 200, 75);
     fill(255, 0, 0);
     rect(50, 250, 200, 75);
-    textSize(50)
+    textSize(30)
     fill(255);
-    text('Iniciar', 70, 105);
-    textSize(40);
-    text('Instruções', 60, 200);
-    text('Creditos', 70, 300);
+    text('INICIAR', 95, 100);
+    textSize(25);
+    text('INSTRUÇÕES', 70, 200);
+    textSize(30);
+    text('CRÉDITOS', 70, 300);
     // COMEÇAR O JOGO
     if (MENU == 1) {
         background(fundo_imagem);

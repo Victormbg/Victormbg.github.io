@@ -1,5 +1,5 @@
-export function Player() {
-    this.size = 80;
+function Player() {
+    this.size = 60;
     this.y = height - this.size;
     this.x = 50;
 
@@ -18,7 +18,9 @@ export function Player() {
         //rect(this.x, this.y, this.size, this.size);
 
         textSize(19);
-        text("PONTUACAO: " + this.score, 30, 30);
+        text("PONTUAÇÃO: " + this.score, 30, 30);
+
+        console.log("PONTUAÇÃO: " + this.score)
     }
 
     this.update = function () {
@@ -38,19 +40,19 @@ export function Player() {
     this.movimento = function () {
         if (keyIsDown(LEFT_ARROW)) {
             this.x = this.x - 10;
-            console.log("ESQUERDA")
+            //console.log("ESQUERDA")
         } else if (keyIsDown(RIGHT_ARROW)) {
             this.x = this.x + 10;
-            console.log("DIREITA")
+            //console.log("DIREITA")
         }
         else if (keyIsDown(32) && player.onBottom()) {
             this.jump();
-            console.log("PULANDO")
+            //console.log("PULANDO")
         }
         else {
             if (this.touchstarted && player.onBottom()) {
                 this.jump();
-                console.log("PULANDO")
+                //console.log("PULANDO")
             }
         }
     }

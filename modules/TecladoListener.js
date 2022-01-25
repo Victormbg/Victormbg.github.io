@@ -8,7 +8,7 @@ export function TecladoListener(jogador) {
 
     function notifyAll(command) {
         for (const observerFunction of observers) {
-            console.log(command)
+            console.log('Teclado: ', command)
             observerFunction(command)
         }
     }
@@ -16,11 +16,8 @@ export function TecladoListener(jogador) {
     document.addEventListener('keydown', handleKeydown)
 
     function handleKeydown(event) {
-     
+
         const keyPressed = event.keyCode;
-
-        console.log(event.keyCode);
-
 
         const command = {
             playerId: jogador,
